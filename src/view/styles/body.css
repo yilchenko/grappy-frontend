@@ -1,0 +1,393 @@
+.body-wrapper{
+    max-width: 95%;
+    min-width: 95%;
+}
+.toolbar-wrapper{
+    background-color: #E2DBDA;
+    border-radius: 25px;
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+    overflow: auto;
+    height:85%;
+    min-width: 400px;
+    /* border: #E2DBDA 13px solid; */
+}
+.toolbar-wrapper::-webkit-scrollbar {
+    display: none;
+}
+.chart-wrapper{
+    /* flex-basis: 65%; */
+    z-index: 10;
+    min-width: 65%;
+    /* max-width: 65%; */
+    width: auto;
+}
+
+.chart-display{
+    background-image: url("../assets/imgs/texture_reg.png");
+    height: 100%;
+    background-color: #6C6887;
+    border-radius: 25px;
+    
+    
+    background-size: cover;
+    
+    
+    -webkit-animation: slideinHorizontal 120s linear;
+    animation: slideinHorizontal 120s linear;
+
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate; 
+
+
+}
+
+@-webkit-keyframes slideinHorizontal {
+    from {background-position: left top; background-size: 2500px;}
+    to {background-position: right top; background-size: 2500px;}
+}
+
+@keyframes slideinHorizontal {
+    from {background-position: left top; background-size: 2500px;}
+    to {background-position: right top; background-size: 2500px;}
+}
+
+@-webkit-keyframes slideinVertical {
+    from {background-position: left top; background-size:700px; }
+    to {background-position: left bottom;background-size:700px;}
+}
+
+@keyframes slideinVertical {
+    from {background-position: left top; background-size:700px; }
+    to {background-position: left bottom;background-size:700px;}
+}
+
+.typebar-item-active{
+    z-index: 2000;
+    height: 100px;
+    width: 75px;
+    background-color: #3E5141;
+    border-radius: 5px;
+    color: white;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.typebar-item-disabled{
+    z-index: -100;
+    height: 100px;
+    width: 75px;
+    background-color: #3E5141;
+    border-radius: 5px;
+    color: white;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.typebar-item-disabled:hover{
+    transform: translateY(-10px);
+}
+.typebar-item-active:hover{
+    transform: translateY(-10px);
+}
+
+.toolbar_export-wrapper{
+    /* flex-basis: 35%; */
+    max-width: 35%;
+    margin-left: 20px;
+}
+
+@media screen and (max-width: 1100px) {
+    .body-wrapper{
+        flex-wrap: wrap;
+        min-width: 100%;
+    }
+    .toolbar-wrapper{
+        min-width: 100%;
+    }
+    .chart-wrapper{
+        min-width: 100%;
+        max-height: 60%;
+    }
+    .toolbar_export-wrapper{
+        min-width: 100%;
+        margin-top: 20px;
+        margin-left: 0px;
+
+    }
+    /* .button_export{
+        max-width: 50px;
+    } */
+    .typebar-wrapper{
+        
+        padding-left: 0%;
+    }
+    
+    .typebar-item-active{
+        width:40px;
+    }
+    .typebar-item-disabled{
+        width: 40px;
+    }
+
+    .display-none-sm{
+        display: none;
+    }
+    .ml-0-sm {
+        margin-left: 0vw !important;
+    }
+    .save_to_archive-button {
+        width: 0;
+        height: 0;
+        font-size: 1.7rem;
+        position: relative;
+        left: 38% !important;
+    }
+}
+
+.ml-0-sm {
+    margin-left: 5vw;
+}
+
+.save_to_archive-button {
+    width: 0;
+    height: 0;
+    font-size: 1.7rem;
+    position: relative;
+    left: 45%;
+}
+
+.typebar-wrapper{
+    padding-left: 15%;
+}
+
+/* style={{ height: 'auto', backgroundColor: '#6C6887', borderRadius: '10px', flexDirection:'column', color:"white" }} */
+.folded_properies-wrapper {
+    height: 100px;
+    background-color: #6C6887;
+    border-radius: 10px;
+    flex-direction: column;
+    color: white;
+    overflow: hidden;
+}
+.unfolded_properies-wrapper {
+    height: 417px;
+    background-color: #6C6887;
+    border-radius: 10px;
+    flex-direction: column;
+    color: white;
+    overflow: hidden;
+}
+.transition {
+    transition: all 1s ease-in; 
+}
+
+
+.button_export{
+    width: 50%;
+    height: 45px;
+    color: white;
+    border-radius: 10px;
+    background-color: #3E5141;
+    cursor: pointer;
+    transition: transform 0.4s ease-in-out;
+}
+
+
+.button_export:hover{
+    transform:translateY(-5px);
+}
+
+.properties_grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    row-gap: 15px;
+    column-gap: 10px;
+}
+.fold{
+    transition: height 2s ease-in-out;
+}
+.height-69{
+    height: 69px;
+}
+.height-auto{
+    height: 400px;
+}
+.button_add{
+    width: 100%;
+    height:50px;
+    border-radius: 10px;
+    background-image: url("../assets/imgs/texture_light.png");
+    background-size: cover;
+    background-repeat: repeat;
+    background-position: center;
+    cursor: pointer;
+
+    
+    
+    
+    -webkit-animation: slideinVertical 100s linear;
+    animation: slideinVertical 100s linear;
+
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate; 
+}
+
+
+.custom-checkbox::part(base) {
+    width:25px;
+    height: 25px;
+}
+
+.custom-checkbox::part(control) {
+    background: white;
+    width:25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.custom-checkbox::part(control--checked) {
+    background: rgb(108, 104, 135);
+    width:25px;
+    height: 25px;
+    border: white 5px solid;
+}
+.custom-checkbox::part(checked-icon) {
+    display: none;
+}
+
+
+.small-input::part(input) {    
+    width:75px;
+    height: 20px;
+    text-align: center;
+    font-family: 'Dela Gothic One', cursive !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-family: 'Source Serif 4', serif !important;
+    font-size: 14px;
+}
+.small-input::part(form-control) {   
+    width:75px;
+    height: 20px;
+    padding-left: 1px;
+    padding-right: 1px;
+    text-align: center;
+}
+.small-input::part(form-control-input) {   
+    width:75px;
+    height: 20px;  
+    text-align: center; 
+}
+.small-input::part(base) {
+    border-radius: 50px;
+    width:75px;
+    height: 20px;
+    text-align: center;
+}
+
+
+
+.reg-input::part(input) {    
+    width:auto;
+    height: 20px;
+    text-align: center;
+    font-family: 'Dela Gothic One', cursive !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-family: 'Source Serif 4', serif !important;
+    font-size: 14px;
+}
+.reg-input::part(form-control) {   
+    width:auto;
+    height: 20px;
+    padding-left: 1px;
+    padding-right: 1px;
+    text-align: center;
+}
+.reg-input::part(form-control-input) {   
+    width:auto;
+    height: 20px;  
+    text-align: center; 
+}
+.reg-input::part(base) {
+    border-radius: 50px;
+    width:auto;
+    height: 20px;
+    text-align: center;
+}
+
+
+
+
+.medium-input::part(input) {    
+    width:120px;
+    height: 20px;
+    text-align: center;
+    font-family: 'Dela Gothic One', cursive !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-family: 'Source Serif 4', serif !important;
+    font-size: 14px;
+}
+.medium-input::part(form-control) {   
+    width:120px;
+    height: 20px;
+    padding-left: 1px;
+    padding-right: 1px;
+    text-align: center;
+}
+.medium-input::part(form-control-input) {   
+    width:120px;
+    height: 20px;  
+    text-align: center; 
+}
+.medium-input::part(base) {
+    border-radius: 50px;
+    width:120px;
+    height: 20px;
+    text-align: center;
+}
+
+
+
+
+.data-item{
+    height: 40px;
+    transition: all 0.3s ease-in-out;
+    cursor: grab;
+}
+
+.custom-tooltip::part(body) {
+    background: #a2bba6;
+    border: solid 1px #1e2920;
+    color:black
+}
+.custom-tooltip::part(base__arrow) {
+    background: #a2bba6;
+    border: solid 1px #1e2920;
+}
+
+
+
+.icon-button-reg sl-icon-button::part(base) {
+    color: gray;
+}
+
+.icon-button-reg sl-icon-button::part(base):hover,
+.icon-button-reg sl-icon-button::part(base):focus {
+    color: rgb(108, 104, 135);
+}
+
+.icon-button-reg sl-icon-button::part(base):active {
+    color: rgb(108, 104, 135);
+}

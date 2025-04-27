@@ -1,0 +1,39 @@
+.archive-card_wrapper {
+    width: 15vw;
+    min-width: 200px;
+    height: 25vh;
+    min-height: 250px;  
+}
+
+.archive-grid {
+    width: auto;
+    display: grid;
+    column-gap: 2vw;
+    row-gap: 100px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-bottom: 100px;
+}
+
+.icon-button-delete sl-icon-button::part(base) {
+    color: gray;
+}
+
+.icon-button-delete sl-icon-button::part(base):hover,
+.icon-button-delete sl-icon-button::part(base):focus {
+    color: rgb(121, 30, 30);
+}
+
+.icon-button-delete sl-icon-button::part(base):active {
+    color: rgb(209, 20, 20);
+}
+
+
+@media screen and (max-width: 1100px) {
+    .archive-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .archive-card_wrapper {
+        height: 20vh;
+        min-height: 200px;  
+    }
+}
