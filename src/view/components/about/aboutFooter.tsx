@@ -28,15 +28,9 @@ const AboutFooter: React.FC = () => {
           }}
         >
           <p className="m-0">
-            This project is a testament to my creative endeavors, where data
-            meets artistry. Navigate through the intricacies of chart creation,
-            configuration tweaking, and data visualization, all while immersing
-            yourself in the captivating world I've designed. Delve into the
-            Archive to explore the legacy of past charts. Please note that every
-            twist, turn, and idea within this project is a product of my
-            imagination. Approach with curiosity and remember, your data
-            deserves to be celebrated. Thank you for joining me on this
-            imaginative journey through the realms of data and design.
+            Approach with curiosity and remember, your data deserves to be
+            celebrated. Thank you for joining me on this imaginative journey
+            through the realms of data and design.
             <br /> <strong>All rights reserved.</strong>
           </p>
         </div>
@@ -55,7 +49,7 @@ const AboutFooter: React.FC = () => {
             style={{ width: "55%" }}
           />
 
-          <div
+          {/* <div
             className="justify-content-start align-items-start d-flex w-100"
             style={{ flexDirection: "column" }}
           >
@@ -84,7 +78,7 @@ const AboutFooter: React.FC = () => {
             >
               more projects
             </span>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

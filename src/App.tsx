@@ -1,7 +1,7 @@
 import "./App.css";
 import "@shoelace-style/shoelace/dist/themes/light.css";
 import { setBasePath } from "@shoelace-style/shoelace/dist/utilities/base-path";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import loadable from "@loadable/component";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import pMinDelay from "p-min-delay";
@@ -70,13 +70,20 @@ interface RotationAngles {
 
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isRotating, setIsRotating] = useState<boolean>(false);
+  const rotationTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     const loadingTimeout = setTimeout(() => {
       setIsLoading(false);
     }, 0);
 
-    return () => clearTimeout(loadingTimeout);
+    return () => {
+      clearTimeout(loadingTimeout);
+      if (rotationTimeoutRef.current) {
+        window.clearTimeout(rotationTimeoutRef.current);
+      }
+    };
   }, []);
 
   const [chartData, setChartData] = useState<ChartDataCustom>({
@@ -145,12 +152,22 @@ const App: React.FC = () => {
   });
 
   const handleRotation = (): void => {
+    if (isRotating) {
+      return;
+    }
+
+    setIsRotating(true);
+
     setRotationAngle((prevRotationAngle) => ({
       ...prevRotationAngle,
       left: Math.floor(Math.random() * 360) + -360,
       top_right: Math.floor(Math.random() * 360) + 360,
       bottom_left: Math.floor(Math.random() * 360) - 360,
     }));
+
+    rotationTimeoutRef.current = window.setTimeout(() => {
+      setIsRotating(false);
+    }, 1000);
   };
 
   const handleAppClick = (e: React.MouseEvent<HTMLDivElement>): void => {
@@ -160,8 +177,12 @@ const App: React.FC = () => {
     }
   };
 
+  const handleWheel = (): void => {
+    handleRotation();
+  };
+
   return (
-    <div className="App" onClick={handleAppClick} onWheel={handleRotation}>
+    <div className="App" onClick={handleAppClick} onWheel={handleWheel}>
       {isLoading ? (
         <div>Loading...</div>
       ) : (

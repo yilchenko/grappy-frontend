@@ -48,7 +48,7 @@ const Header: React.FC<HeaderProps> = ({ rotationAngle }: any) => {
       style={{
         height: "10vh",
         justifyContent: "space-between",
-        letterSpacing: 15,
+        letterSpacing: 4,
         backgroundColor: "white",
       }}
     >
